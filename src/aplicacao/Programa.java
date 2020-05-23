@@ -2,8 +2,8 @@ package aplicacao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
-import auxiliar.ProdutoPredicate;
 import entidades.Produto;
 
 public class Programa {
@@ -21,13 +21,19 @@ public class Programa {
 		list.add(new Produto("Dvd", 350.50));
 		list.add(new Produto("Abajour", 80.90));
 	
-		list.removeIf(Produto::produtoPredicateStatic);
+		//		list.removeIf(Produto::produtoPredicateStatic); Predicate Static (método estático)
+
+	
+		//		list.removeIf(Produto::produtoPredicateNaoStatic); Predicate não Static (método não estático)
+		
+		double min = 100.0;
+		Predicate<Produto> ped = p -> p.getPreco() >= min;
+		list.removeIf(ped);
+		
 		
 		for(Produto p : list) {
 			System.out.println(p);
 		}
-	
-	
 	
 	}
 }

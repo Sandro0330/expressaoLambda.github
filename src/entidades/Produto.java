@@ -30,10 +30,13 @@ public class Produto {
 		return p.getPreco() >= 100.0;
 	}
 	
+	public boolean produtoPredicateNaoStatic() {
+		return preco >= 100.0;
+	}
+	
 	@Override
 	public String toString() {
 		return "Nome do produto = " + nome + String.format(": R$%.2f",  preco);
 	}
-	
 	
 }
