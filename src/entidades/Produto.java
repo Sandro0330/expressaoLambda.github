@@ -26,6 +26,10 @@ public class Produto {
 		this.preco = preco;
 	}
 
+	public static boolean produtoPredicateStatic(Produto p) {
+		return p.getPreco() >= 100.0;
+	}
+	
 	@Override
 	public String toString() {
 		return "Nome do produto = " + nome + String.format(": R$%.2f",  preco);

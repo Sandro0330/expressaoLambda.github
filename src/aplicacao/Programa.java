@@ -21,7 +21,7 @@ public class Programa {
 		list.add(new Produto("Dvd", 350.50));
 		list.add(new Produto("Abajour", 80.90));
 	
-		list.removeIf(new ProdutoPredicate());
+		list.removeIf(Produto::produtoPredicateStatic);
 		
 		for(Produto p : list) {
 			System.out.println(p);
